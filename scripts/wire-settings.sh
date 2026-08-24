@@ -86,10 +86,15 @@ echo ">> Settings integration complete."
 # ---------------------------------------------------------------------------
 # Drop FaceUnlockService: PE's implementation needs modules from the dead
 # gitlab.pixelexperience.org (external_faceunlock) and cannot build.
+FU_DIR="$TREE/packages/apps/FaceUnlockService"
+if [ -d "$FU_DIR" ]; then
+    rm -rf "$FU_DIR"
+    echo ">> removed unbuildable FaceUnlockService app"
+fi
 COMMON_MK="$TREE/vendor/aosp/config/common.mk"
 if [ -f "$COMMON_MK" ] && grep -q 'FaceUnlockService' "$COMMON_MK"; then
     sed -i '/^\s*FaceUnlockService\s*$/d' "$COMMON_MK"
-    echo ">> removed unbuildable FaceUnlockService from vendor/aosp"
+    echo ">> removed FaceUnlockService from vendor/aosp PRODUCT_PACKAGES"
 fi
 
 # ---------------------------------------------------------------------------
