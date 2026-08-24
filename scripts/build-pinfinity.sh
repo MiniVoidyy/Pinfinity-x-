@@ -5,7 +5,8 @@
 #
 # Zips land in /mnt/b/PinfinityX/releases/<codename>/
 # ============================================================
-set -uo pipefail
+set -o pipefail
+unset ZSH_VERSION ZSH_NAME
 
 DEVICES=("$@")
 [ ${#DEVICES[@]} -eq 0 ] && DEVICES=(starlte)
