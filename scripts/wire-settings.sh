@@ -84,6 +84,15 @@ PY
 echo ">> Settings integration complete."
 
 # ---------------------------------------------------------------------------
+# Drop FaceUnlockService: PE's implementation needs modules from the dead
+# gitlab.pixelexperience.org (external_faceunlock) and cannot build.
+COMMON_MK="$TREE/vendor/aosp/config/common.mk"
+if [ -f "$COMMON_MK" ] && grep -q 'FaceUnlockService' "$COMMON_MK"; then
+    sed -i '/^\s*FaceUnlockService\s*$/d' "$COMMON_MK"
+    echo ">> removed unbuildable FaceUnlockService from vendor/aosp"
+fi
+
+# ---------------------------------------------------------------------------
 # Stub for PE's dead-gitlab vendor/gms (vendor/aosp hard-inherits
 # vendor/gms/products/gms.mk, but gitlab.pixelexperience.org no longer
 # resolves). A no-op stub keeps product config parsing happy; flash
