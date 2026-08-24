@@ -15,8 +15,7 @@ RELEASE_DIR=/mnt/b/PinfinityX/releases
 mkdir -p "$RELEASE_DIR"
 
 # Integrate the Pinfinity X page into AOSP Settings (idempotent)
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-bash "$SCRIPT_DIR/wire-settings.sh" "$PWD"
+bash "$PWD/vendor/pinfinity/scripts/wire-settings.sh" "$PWD"
 
 export PATH="$HOME/bin:$PATH"
 export USE_CCACHE=1

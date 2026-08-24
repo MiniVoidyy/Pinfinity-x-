@@ -15,7 +15,7 @@ set -euo pipefail
 TREE="${1:-$PWD}"
 SETTINGS_DIR="$TREE/packages/apps/Settings"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PATCH_SRC="$(cd "$SCRIPT_DIR/../vendor/pinfinity/patches/packages_apps_Settings" && pwd)"
+PATCH_SRC="$(cd "$SCRIPT_DIR/../patches/packages_apps_Settings" && pwd)"
 
 if [ ! -d "$SETTINGS_DIR" ]; then
     echo "ERROR: $SETTINGS_DIR not found. Run this from the synced ROM tree." >&2
