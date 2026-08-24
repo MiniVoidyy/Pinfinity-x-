@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Lower scroll friction: default AOSP is 0.015 -->
+    <item name="config_scrollFriction" format="float" type="dimen">0.009</item>
+
+    <!-- Slightly faster global animation durations (AOSP: 150/300/500) -->
+    <integer name="config_shortAnimTime">110</integer>
+    <integer name="config_mediumAnimTime">220</integer>
+    <integer name="config_longAnimTime">380</integer>
+</resources>

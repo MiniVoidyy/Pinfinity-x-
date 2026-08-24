@@ -1,0 +1,12 @@
+# ============================================================
+# Pinfinity X boot hooks.
+#  1) scheduler/VM tuning on every boot (best-effort, guarded writes)
+#  2) one-time "snappy defaults" after the very first boot
+# ============================================================
+
+on property:sys.boot_completed=1
+    exec_background - root root -- /system/bin/sh /system_ext/bin/pinfinity-tune.sh
+
+on property:sys.boot_completed=1 && property:persist.pinfinity.defaults_done=
+    exec_background - root root -- /system/bin/sh /system_ext/bin/pinfinity-defaults.sh
+    setprop persist.pinfinity.defaults_done 1

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/pinfinity_title">
+
+    <PreferenceCategory android:title="@string/cat_performance">
+
+        <ListPreference
+            android:key="anim_window"
+            android:title="@string/anim_window"
+            android:summary="%s"
+            android:entries="@array/pinfinity_scale_entries"
+            android:entryValues="@array/pinfinity_scale_values"
+            android:defaultValue="1"/>
+
+        <ListPreference
+            android:key="anim_transition"
+            android:title="@string/anim_transition"
+            android:summary="%s"
+            android:entries="@array/pinfinity_scale_entries"
+            android:entryValues="@array/pinfinity_scale_values"
+            android:defaultValue="1"/>
+
+        <ListPreference
+            android:key="anim_animator"
+            android:title="@string/anim_animator"
+            android:summary="%s"
+            android:entries="@array/pinfinity_scale_entries"
+            android:entryValues="@array/pinfinity_scale_values"
+            android:defaultValue="1"/>
+
+        <ListPreference
+            android:key="scroll_profile"
+            android:title="@string/scroll_profile"
+            android:summary="@string/scroll_profile_sum"
+            android:entries="@array/pinfinity_scroll_entries"
+            android:entryValues="@array/pinfinity_scroll_values"
+            android:defaultValue="balanced"/>
+
+        <SwitchPreferenceCompat
+            android:key="freezer"
+            android:title="@string/freezer"
+            android:summary="@string/freezer_sum"
+            android:defaultValue="true"/>
+
+        <ListPreference
+            android:key="ram_profile"
+            android:title="@string/ram_profile"
+            android:summary="@string/ram_profile_sum"
+            android:entries="@array/pinfinity_ram_entries"
+            android:entryValues="@array/pinfinity_ram_values"
+            android:defaultValue="balanced"/>
+
+        <ListPreference
+            android:key="bg_limit"
+            android:title="@string/bg_limit"
+            android:summary="@string/bg_limit_sum"
+            android:entries="@array/pinfinity_bgl_entries"
+            android:entryValues="@array/pinfinity_bgl_values"
+            android:defaultValue="0"/>
+
+        <ListPreference
+            android:key="renderer"
+            android:title="@string/renderer"
+            android:summary="@string/renderer_sum"
+            android:entries="@array/pinfinity_render_entries"
+            android:entryValues="@array/pinfinity_render_values"
+            android:defaultValue="auto"/>
+
+        <Preference
+            android:key="fstrim"
+            android:title="@string/fstrim"
+            android:summary="@string/fstrim_sum"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/cat_ui">
+
+        <ListPreference
+            android:key="font_scale"
+            android:title="@string/font_scale"
+            android:summary="%s"
+            android:entries="@array/pinfinity_font_entries"
+            android:entryValues="@array/pinfinity_font_values"
+            android:defaultValue="1.0"/>
+
+        <ListPreference
+            android:key="screen_timeout"
+            android:title="@string/screen_timeout"
+            android:summary="%s"
+            android:entries="@array/pinfinity_timeout_entries"
+            android:entryValues="@array/pinfinity_timeout_values"
+            android:defaultValue="60000"/>
+
+        <SwitchPreferenceCompat
+            android:key="dark_force"
+            android:title="@string/dark_force"
+            android:summary="@string/dark_force_sum"/>
+
+        <SwitchPreferenceCompat
+            android:key="show_taps"
+            android:title="@string/show_taps"
+            android:summary="@string/show_taps_sum"/>
+
+        <SwitchPreferenceCompat
+            android:key="pointer_loc"
+            android:title="@string/pointer_loc"
+            android:summary="@string/pointer_loc_sum"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/cat_gaming">
+
+        <Preference
+            android:key="game_apps"
+            android:title="@string/game_apps"
+            android:summary="@string/game_apps_sum"/>
+
+        <ListPreference
+            android:key="thermal_profile"
+            android:title="@string/thermal_profile"
+            android:summary="@string/thermal_profile_sum"
+            android:entries="@array/pinfinity_thermal_entries"
+            android:entryValues="@array/pinfinity_thermal_values"
+            android:defaultValue="0"/>
+
+        <SwitchPreferenceCompat
+            android:key="dnd_gaming"
+            android:title="@string/dnd_gaming"
+            android:summary="@string/dnd_gaming_sum"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/cat_maintenance">
+
+        <Preference
+            android:key="restart_ui"
+            android:title="@string/restart_ui"
+            android:summary="@string/restart_ui_sum"/>
+
+        <Preference
+            android:key="trim_caches"
+            android:title="@string/trim_caches"
+            android:summary="@string/trim_caches_sum"/>
+
+        <Preference
+            android:key="soft_reboot"
+            android:title="@string/soft_reboot"
+            android:summary="@string/soft_reboot_sum"/>
+    </PreferenceCategory>
+</PreferenceScreen>

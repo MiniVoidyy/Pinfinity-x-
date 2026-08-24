@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ultra scroll profile: default AOSP is 0.015 -->
+    <item name="config_scrollFriction" format="float" type="dimen">0.006</item>
+
+    <!-- Very fast global animation durations (AOSP: 150/300/500) -->
+    <integer name="config_shortAnimTime">90</integer>
+    <integer name="config_mediumAnimTime">180</integer>
+    <integer name="config_longAnimTime">320</integer>
+</resources>

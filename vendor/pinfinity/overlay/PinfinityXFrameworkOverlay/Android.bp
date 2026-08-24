@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "PinfinityXFrameworkOverlay",
+    theme: "PinfinityXFramework",
+    sdk_version: "current",
+    product_specific: true,
+}

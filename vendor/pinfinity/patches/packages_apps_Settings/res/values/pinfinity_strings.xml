@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pinfinity X: self-contained resources (no upstream file edits needed) -->
+<resources>
+    <string name="pinfinity_title">Pinfinity settings</string>
+    <string name="pinfinity_summary">Performance, gaming &amp; system tweaks</string>
+
+    <!-- Categories -->
+    <string name="cat_performance">Performance</string>
+    <string name="cat_ui">UI &amp; System</string>
+    <string name="cat_gaming">Gaming</string>
+    <string name="cat_maintenance">Maintenance</string>
+
+    <!-- Performance -->
+    <string name="anim_window">Window animation scale</string>
+    <string name="anim_transition">Transition animation scale</string>
+    <string name="anim_animator">Animator duration scale</string>
+    <string name="scroll_profile">Scroll profile</string>
+    <string name="scroll_profile_sum">Balanced or ultra-fast list scrolling</string>
+    <string name="scroll_ultra_on">Ultra scroll enabled</string>
+    <string name="scroll_balanced">Balanced scrolling</string>
+    <string name="freezer">Cached apps freezer</string>
+    <string name="freezer_sum">Freezes cached processes for instant app resumes and less RAM waste</string>
+    <string name="ram_profile">RAM management</string>
+    <string name="ram_profile_sum">How many cached apps are kept in memory</string>
+    <string name="bg_limit">Background process limit</string>
+    <string name="bg_limit_sum">Hard cap on background processes (0 = standard)</string>
+    <string name="renderer">HWUI renderer</string>
+    <string name="renderer_sum">Skia GL is fastest on Exynos 9810; Vulkan is experimental</string>
+    <string name="restart_systemui_hint">Restart SystemUI to apply the renderer change</string>
+    <string name="fstrim">Trim storage now</string>
+    <string name="fstrim_sum">Runs fstrim on /data (root)</string>
+    <string name="fstrim_done">fstrim finished</string>
+    <string name="fstrim_no_root">Needs root (su) to run fstrim</string>
+
+    <!-- UI -->
+    <string name="font_scale">Font size</string>
+    <string name="screen_timeout">Screen timeout</string>
+    <string name="dark_force">Force dark theme</string>
+    <string name="dark_force_sum">Keeps dark mode always on regardless of schedule</string>
+    <string name="show_taps">Show taps</string>
+    <string name="show_taps_sum">Visual feedback for touch input</string>
+    <string name="pointer_loc">Pointer location</string>
+    <string name="pointer_loc_sum">Overlay with exact touch coordinates</string>
+
+    <!-- Gaming -->
+    <string name="game_apps">Game performance profiles</string>
+    <string name="game_apps_sum">Set per-game performance or battery modes (GameManager)</string>
+    <string name="pick_app">Select an app</string>
+    <string name="mode_performance">Performance mode</string>
+    <string name="mode_battery">Battery saver mode</string>
+    <string name="mode_default">Default (reset)</string>
+    <string name="game_applied">Game mode applied</string>
+    <string name="thermal_profile">Kernel thermal profile</string>
+    <string name="thermal_profile_sum">Requires a kernel exposing thermal_message/sconfig</string>
+    <string name="thermal_applied">Thermal profile applied</string>
+    <string name="thermal_missing">Your kernel does not expose this node</string>
+    <string name="dnd_gaming">Do not disturb while gaming</string>
+    <string name="dnd_gaming_sum">Priority-only notifications when toggled on</string>
+
+    <!-- Maintenance -->
+    <string name="restart_ui">Restart SystemUI</string>
+    <string name="restart_ui_sum">Apply UI tweaks without a reboot</string>
+    <string name="trim_caches">Trim app caches</string>
+    <string name="trim_caches_sum">Drops all application cached data</string>
+    <string name="trim_done">Caches trimmed</string>
+    <string name="soft_reboot">Soft reboot</string>
+    <string name="soft_reboot_sum">Restart the Android framework only</string>
+
+    <!-- Arrays (prefixed to avoid collisions with Settings' own) -->
+    <string-array name="pinfinity_scale_entries">
+        <item>Animation off</item>
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x (snappy)</item>
+        <item>1.0x stock</item>
+    </string-array>
+    <string-array name="pinfinity_scale_values">
+        <item>0</item><item>0.25</item><item>0.5</item><item>0.75</item><item>1</item>
+    </string-array>
+
+    <string-array name="pinfinity_scroll_entries">
+        <item>Balanced</item>
+        <item>Ultra fast</item>
+    </string-array>
+    <string-array name="pinfinity_scroll_values">
+        <item>balanced</item><item>ultra</item>
+    </string-array>
+
+    <string-array name="pinfinity_ram_entries">
+        <item>Aggressive (more free RAM)</item>
+        <item>Balanced (recommended)</item>
+        <item>Relaxed (keeps more apps alive)</item>
+    </string-array>
+    <string-array name="pinfinity_ram_values">
+        <item>aggressive</item><item>balanced</item><item>relaxed</item>
+    </string-array>
+
+    <string-array name="pinfinity_bgl_entries">
+        <item>Standard limit</item>
+        <item>No background processes</item>
+        <item>1 process</item>
+        <item>2 processes</item>
+        <item>4 processes</item>
+    </string-array>
+    <string-array name="pinfinity_bgl_values">
+        <item>0</item><item>1</item><item>2</item><item>3</item><item>4</item>
+    </string-array>
+
+    <string-array name="pinfinity_render_entries">
+        <item>Auto (system default)</item>
+        <item>Skia GL (recommended)</item>
+        <item>Skia Vulkan (experimental)</item>
+    </string-array>
+    <string-array name="pinfinity_render_values">
+        <item>auto</item><item>skiagl</item><item>skiavk</item>
+    </string-array>
+
+    <string-array name="pinfinity_font_entries">
+        <item>Small</item><item>Default</item><item>Large</item><item>Largest</item>
+    </string-array>
+    <string-array name="pinfinity_font_values">
+        <item>0.85</item><item>1.0</item><item>1.15</item><item>1.3</item>
+    </string-array>
+
+    <string-array name="pinfinity_timeout_entries">
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>2 minutes</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+    </string-array>
+    <string-array name="pinfinity_timeout_values">
+        <item>30000</item><item>60000</item><item>120000</item><item>300000</item><item>600000</item>
+    </string-array>
+
+    <string-array name="pinfinity_thermal_entries">
+        <item>Normal</item>
+        <item>Profile 1</item>
+        <item>Profile 2</item>
+        <item>Profile 3</item>
+    </string-array>
+    <string-array name="pinfinity_thermal_values">
+        <item>0</item><item>1</item><item>2</item><item>3</item>
+    </string-array>
+</resources>
