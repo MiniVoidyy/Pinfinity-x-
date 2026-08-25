@@ -88,7 +88,7 @@ echo ">> Settings integration complete."
 # PATH_OVERRIDE_SOONG etc. via SOONG_CONFIG customVarsPlugin.  Without this
 # soong fails on the "generated_kernel_includes" module definition.
 BOARD_CFG="$TREE/device/samsung/starlte/BoardConfig.mk"
-if [ -f "$BOARD_CFG" ] && ! grep -q 'BoardConfigKernel.mk' "$BOARD_CFG"; then
+if [ -f "$BOARD_CFG" ] && ! grep -q 'vendor/aosp/config/BoardConfig.mk' "$BOARD_CFG"; then
     cat >> "$BOARD_CFG" <<'EOF'
 
 # PE vendor/aosp kernel + soong build vars (PATH_OVERRIDE_SOONG, KERNEL_ARCH …)
