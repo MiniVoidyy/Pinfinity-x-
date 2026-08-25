@@ -1,0 +1,9 @@
+java_library {
+    name: "faceunlock_framework",
+    srcs: ["java/**/*.java"],
+}
+
+// Compile-time stub replacing PixelExperience's dead gitlab-hosted
+// external_faceunlock. Provides exactly the API surface referenced by
+// frameworks/base services/SystemUI so the ROM builds; the feature itself
+// stays inert because FaceUnlockUtils.isFaceUnlockSupported() returns false.
