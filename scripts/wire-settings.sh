@@ -84,6 +84,20 @@ PY
 echo ">> Settings integration complete."
 
 # ---------------------------------------------------------------------------
+# Include PE's soong custom-var exports so that BoardConfigSoong.mk registers
+# PATH_OVERRIDE_SOONG etc. via SOONG_CONFIG customVarsPlugin.  Without this
+# soong fails on the "generated_kernel_includes" module definition.
+BOARD_CFG="$TREE/device/samsung/starlte/BoardConfig.mk"
+if [ -f "$BOARD_CFG" ] && ! grep -q 'BoardConfigSoong.mk' "$BOARD_CFG"; then
+    cat >> "$BOARD_CFG" <<'EOF'
+
+# PE soong custom-var plugin (exports PATH_OVERRIDE_SOONG etc.)
+include vendor/aosp/config/BoardConfigSoong.mk
+EOF
+    echo ">> injected BoardConfigSoong.mk include into starlte BoardConfig"
+fi
+
+# ---------------------------------------------------------------------------
 # Drop FaceUnlockService: PE's implementation needs modules from the dead
 # gitlab.pixelexperience.org (external_faceunlock) and cannot build.
 FU_DIR="$TREE/packages/apps/FaceUnlockService"
