@@ -88,13 +88,24 @@ echo ">> Settings integration complete."
 # PATH_OVERRIDE_SOONG etc. via SOONG_CONFIG customVarsPlugin.  Without this
 # soong fails on the "generated_kernel_includes" module definition.
 BOARD_CFG="$TREE/device/samsung/starlte/BoardConfig.mk"
-if [ -f "$BOARD_CFG" ] && ! grep -q 'BoardConfigSoong.mk' "$BOARD_CFG"; then
+if [ -f "$BOARD_CFG" ] && ! grep -q 'BoardConfigKernel.mk' "$BOARD_CFG"; then
     cat >> "$BOARD_CFG" <<'EOF'
 
-# PE soong custom-var plugin (exports PATH_OVERRIDE_SOONG etc.)
-include vendor/aosp/config/BoardConfigSoong.mk
+# PE vendor/aosp kernel + soong build vars (PATH_OVERRIDE_SOONG, KERNEL_ARCH …)
+include vendor/aosp/config/BoardConfig.mk
 EOF
-    echo ">> injected BoardConfigSoong.mk include into starlte BoardConfig"
+    echo ">> injected vendor/aosp BoardConfig.mk into starlte BoardConfig"
+fi
+
+# ---------------------------------------------------------------------------
+# APNs config — device/sample/etc/apns-full-conf.xml was dropped in recent
+# AOSP/PE syncs but ninja still references it.  Empty stub is sufficient;
+# the real APNs are loaded at runtime from the carrier or MindTheGapps.
+APNS="$TREE/device/sample/etc/apns-full-conf.xml"
+if [ ! -f "$APNS" ]; then
+    mkdir -p "$(dirname "$APNS")"
+    printf '<?xml version="1.0" encoding="utf-8"?>\n<apns/>\n' > "$APNS"
+    echo ">> created empty apns-full-conf.xml stub"
 fi
 
 # ---------------------------------------------------------------------------
